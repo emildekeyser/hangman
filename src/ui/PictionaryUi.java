@@ -14,7 +14,15 @@ public class PictionaryUi {
 	this.speler = speler;
 }
 
+	/*
+	public void showKeuze() {
+	Object[] shapes = {"Cirkel", "Rechthoek"};
+			Object keuze = JOptionPane.showInputDialog(null, "Wat wilt u tekenen",
+			"input", JOptionPane.INFORMATION_MESSAGE, null, shapes, null);
+			JOptionPane.showMessageDialog(null,keuze);
+	}
 	
+	*/
 	
 	
 	public void showMenu() {
@@ -24,5 +32,7 @@ public class PictionaryUi {
 		JOptionPane.showMessageDialog(null,"U heeft een correct punt aangemaakt: " + gebruikerPunt.toString());
 
 }
+	
+		
 }
 
