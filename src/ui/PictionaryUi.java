@@ -28,16 +28,35 @@ public class PictionaryUi {
 			JOptionPane.showMessageDialog(null,keuze);
 			
 			if( keuze == "Cirkel") {
-				int radius = Integer.parseInt(JOptionPane.showInputDialog("wat is de radius van de cirkel"));
-				Cirkel c = new Cirkel(gebruikerPunt, radius);
-				 JOptionPane.showMessageDialog(null,c.toString());		
+				try {
+					
+					int radius = Integer.parseInt(JOptionPane.showInputDialog("wat is de radius van de cirkel"));
+					Cirkel c = new Cirkel(gebruikerPunt, radius);
+					 JOptionPane.showMessageDialog(null,c.toString());	
+					
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "geen negatieve waarden");
+					
+					
+				}
+				
+					
 				
 			}
 			else if(keuze == "Rechthoek") {
+				
+			try {
 				int breedte = Integer.parseInt(JOptionPane.showInputDialog("wat is de breedte van de rechthoek"));
 				int hoogte = Integer.parseInt(JOptionPane.showInputDialog("wat is de hoogte van de rechthoek"));
 				 Rechthoek r = new Rechthoek(gebruikerPunt,breedte,hoogte);
-				 JOptionPane.showMessageDialog(null,r.toString());				
+				 JOptionPane.showMessageDialog(null,r.toString());
+					
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "geen negatieve waarden");
+					
+					
+				}
+				
 			}
 	}
 	
