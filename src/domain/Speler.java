@@ -1,8 +1,9 @@
 package domain;
 
 //hellooow
+// hey man
 public class Speler {
-	String name;
+	String naam;
 	int score;
 	public Speler(String naam) {
 		setNaam(naam);
