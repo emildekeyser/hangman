@@ -23,7 +23,7 @@ public class Cirkel {
 		return radius;
 	}
 
-	public Punt getMiddelpuntPunt() {
+	public Punt getMiddelPunt() {
 		return punt;
 	}
 
@@ -39,7 +39,7 @@ public class Cirkel {
 		Cirkel other = (Cirkel) obj;
 		if (radius != other.radius)
 			return false;
-		if(!this.punt.equals((Punt) obj.getPunt())) {
+		if(!this.punt.equals( ((Cirkel) obj).getMiddelPunt())) {
 			return false;
 		}
 		return true;
