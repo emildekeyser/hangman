@@ -13,16 +13,7 @@ public class PictionaryUi {
 		
 	this.speler = speler;
 }
-
-	/*
-	public void showKeuze() {
-	Object[] shapes = {"Cirkel", "Rechthoek"};
-			Object keuze = JOptionPane.showInputDialog(null, "Wat wilt u tekenen",
-			"input", JOptionPane.INFORMATION_MESSAGE, null, shapes, null);
-			JOptionPane.showMessageDialog(null,keuze);
-	}
 	
-	*/
 	
 	
 	public void showMenu() {
@@ -31,7 +22,24 @@ public class PictionaryUi {
 		Punt gebruikerPunt = new Punt(xCoordinaat,yCoordinaat);
 		JOptionPane.showMessageDialog(null,"U heeft een correct punt aangemaakt: " + gebruikerPunt.toString());
 
-}
+		Object[] shapes = {"Cirkel", "Rechthoek"};
+			Object keuze = JOptionPane.showInputDialog(null, "Wat wilt u tekenen",
+			"input", JOptionPane.INFORMATION_MESSAGE, null, shapes, null);
+			JOptionPane.showMessageDialog(null,keuze);
+			
+			if( keuze == "Cirkel") {
+				int radius = Integer.parseInt(JOptionPane.showInputDialog("wat is de radius van de cirkel"));
+				Cirkel c = new Cirkel(gebruikerPunt, radius);
+				 JOptionPane.showMessageDialog(null,c.toString());		
+				
+			}
+			else if(keuze == "Rechthoek") {
+				int breedte = Integer.parseInt(JOptionPane.showInputDialog("wat is de breedte van de rechthoek"));
+				int hoogte = Integer.parseInt(JOptionPane.showInputDialog("wat is de hoogte van de rechthoek"));
+				 Rechthoek r = new Rechthoek(gebruikerPunt,breedte,hoogte);
+				 JOptionPane.showMessageDialog(null,r.toString());				
+			}
+	}
 	
 		
 }
