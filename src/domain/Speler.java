@@ -1,5 +1,6 @@
 package domain;
 
+//hellooow
 public class Speler {
 	String name;
 	int score;
