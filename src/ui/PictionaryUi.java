@@ -4,9 +4,15 @@ import java.util.*;
 import javax.swing.JOptionPane;
 import javax.swing.JOptionPane.*;
 
-import domain.Punt;
+import domain.*;
+
 
 public class PictionaryUi {
+	Speler speler;
+	public PictionaryUi(Speler speler) {
+		
+	this.speler = speler;
+}
 
 	
 	

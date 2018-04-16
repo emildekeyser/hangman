@@ -1,25 +1,39 @@
 package domain;
 
-public class Rechthoek {
+public class Rechthoek  {
 	
 	private int breedte;
 	private int hoogte;
+	private Punt linkerBovenhoek;
 
 	
-	public Rechthoek(int breedte, int hoogte) {
-		super();
+	public Rechthoek(Punt linkerBovenhoek,int breedte, int hoogte) {
 		setBreedte(breedte);
 		setHoogte(hoogte);
+		setLinkerBovenhoek(linkerBovenhoek);
 	}
-	
-	
+
+
+	public Punt getLinkerBovenhoek() {
+		return linkerBovenhoek;
+	}
+
+
+
+	public void setLinkerBovenhoek(Punt linkerBovenhoek) {
+		if(linkerBovenhoek == null) {
+			throw new DomainException();
+		}
+		this.linkerBovenhoek = linkerBovenhoek;
+	}
+
 	public int getBreedte() {
 		return breedte;
 	}
 	
 	public void setBreedte(int breedte) {
-		if(breedte <= 0 ) {
-			throw new IllegalArgumentException("de breedte mag niet minder zijn dan 0!");
+		if(breedte <= 0  ) {
+			throw new DomainException();
 		}
 		this.breedte = breedte;
 	}
@@ -30,7 +44,7 @@ public class Rechthoek {
 	
 	public void setHoogte(int hoogte) {
 		if(hoogte <= 0 ) {
-			throw new IllegalArgumentException("de hoogte mag niet minder zijn dan 0!");
+			throw new DomainException();
 		}
 		this.hoogte = hoogte;
 	}
@@ -49,15 +63,18 @@ public class Rechthoek {
 			return false;
 		if (hoogte != other.hoogte)
 			return false;
+		if (linkerBovenhoek == null) {
+			if (other.linkerBovenhoek != null)
+				return false;
+		} else if (!linkerBovenhoek.equals(other.linkerBovenhoek))
+			return false;
 		return true;
 	}
 
 
-	
-	
 	@Override
 	public String toString() {
-		return "Rechthoek : positie : (" + ", " + " )" + "- breedte : " + breedte + " - hoogte : " + hoogte;
+		return "Rechthoek : positie : ("+ linkerBovenhoek.getX() + ", " +  linkerBovenhoek.getY()+ " )" + "- breedte : " + breedte + " - hoogte : " + hoogte;
 	}
 	
 	
