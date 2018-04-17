@@ -1,6 +1,8 @@
 package domain;
 
-public class Driehoek extends Vorm {
+import java.awt.Graphics;
+
+public class Driehoek extends Vorm implements Tekenbaar {
 	
 	private Punt hoekPunt1;
 	private Punt hoekPunt2;
@@ -104,5 +106,15 @@ public class Driehoek extends Vorm {
 		Punt linkerBovenHoek = new Punt(x, y);
 		Omhullende o = new Omhullende(linkerBovenHoek, breedte, hoogte);
 		return o;
+	}
+	@Override
+	public void teken(Graphics graphics) {
+		 
+		LijnStuk A = new LijnStuk(this.getHoekPunt1(), this.getHoekPunt2());
+		LijnStuk B = new LijnStuk(this.getHoekPunt2(), this.getHoekPunt3());
+		LijnStuk C = new LijnStuk(this.getHoekPunt3(), this.getHoekPunt1());
+		A.teken(graphics);
+		B.teken(graphics);
+		C.teken(graphics);
 	}
 }

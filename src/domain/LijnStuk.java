@@ -1,6 +1,8 @@
 package domain;
 
-public class LijnStuk extends Vorm {
+import java.awt.Graphics;
+
+public class LijnStuk extends Vorm  implements Tekenbaar{
 
 	private Punt startPunt;
 	private Punt eindPunt;
@@ -65,5 +67,13 @@ public class LijnStuk extends Vorm {
 		Omhullende o = new Omhullende(linkerBovenPunt, breedte, hoogte);
 		return o;
 	}
+	
+	@Override
+	public void teken(Graphics graphics) {
+		
+		graphics.drawLine(this.getStartPunt().getX(), this.getStartPunt().getY(), this.getEindPunt().getX(),
+				this.getEindPunt().getY());
+	}
+
 
 }
