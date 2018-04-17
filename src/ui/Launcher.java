@@ -9,7 +9,7 @@ public class Launcher {
 		String inputValue = JOptionPane.showInputDialog("Welkom!\n Hoe heet je?");
 		Speler speler = new Speler(inputValue);
 		PictionaryUi pictionaryUi = new PictionaryUi(speler);
-		pictionaryUi.showMenu();
+		pictionaryUi.hoofdMenu();
 		
 	}
 
