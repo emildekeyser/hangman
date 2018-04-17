@@ -83,5 +83,21 @@ public class DriehoekTest {
 		Driehoek drieHoek = new Driehoek(punt1, punt2, punt3);
 		assertFalse(drieHoek.equals(null));
 	}
+	
+	@Test
+	public void Omhullende_geeft_correcte_waarde() {
+		Driehoek drieHoek = new Driehoek(punt1, punt2, punt3);
+		
+		int x = punt1.getX();
+		int y = Math.min(Math.min(punt1.getY(), punt2.getY()), punt3.getY());
+		int hoogte = Math.max(Math.max(punt1.getY(), punt2.getY()), punt3.getY()) - y ;
+		int breedte = Math.max(Math.max(punt1.getX(), punt2.getX()), punt3.getX()) - x ;
+		Punt linkerBovenHoek = new Punt(x, y);
+		
+		assertEquals(linkerBovenHoek, drieHoek.getOmhullende().getLinkerBovenhoek());
+		assertEquals(breedte, drieHoek.getOmhullende().getBreedte());
+		assertEquals(hoogte, drieHoek.getOmhullende().getHoogte());
+		
+	}
 
 }

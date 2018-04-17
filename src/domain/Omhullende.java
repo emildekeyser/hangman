@@ -1,6 +1,6 @@
 package domain;
 
-public class Omhullende {
+public class Omhullende{
 	
 	private Punt linkerBovenhoek;
 	private int breedte, hoogte;

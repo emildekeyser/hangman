@@ -6,8 +6,8 @@ public class Tekening {
 
 	String naam;
 	private static final int MIN_X = 0;
-	private static final int MAX_X = 0;
-	private static final int MIN_Y = 399;
+	private static final int MAX_X = 399;
+	private static final int MIN_Y = 0;
 	private static final int MAX_Y = 399;
 	ArrayList<Vorm> vormen;
 
@@ -34,8 +34,18 @@ public class Tekening {
 		if (vorm == null) {
 			throw new DomainException();
 		}
-
-		this.vormen.add(vorm);
+		
+		Omhullende omhullendeVanVorm = vorm.getOmhullende();
+		if(omhullendeVanVorm.getLinkerBovenhoek().getX() < MIN_X || omhullendeVanVorm.getLinkerBovenhoek().getX() + omhullendeVanVorm.getBreedte() > MAX_X
+		   || omhullendeVanVorm.getLinkerBovenhoek().getY() < MIN_Y || omhullendeVanVorm.getLinkerBovenhoek().getY() + omhullendeVanVorm.getHoogte() > MAX_Y) {
+			
+			throw new DomainException();
+			
+		} else {
+			
+			this.vormen.add(vorm);
+			
+		}
 	}
 
 	public int getAantalVormen() {
