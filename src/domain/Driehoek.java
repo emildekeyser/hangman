@@ -95,4 +95,14 @@ public class Driehoek extends Vorm {
 		return "Driehoek: hoekpunt1: " + hoekPunt1.toString() + " - hoekpunt2: " + hoekPunt2.toString() + " - hoekpunt3: " + hoekPunt3.toString();
 		
 	}
+	@Override
+	public Omhullende getOmhullende() {
+		int x = hoekPunt1.getX();
+		int y = Math.min(Math.min(hoekPunt1.getY(), hoekPunt2.getY()), hoekPunt3.getY());
+		int hoogte = y - Math.max(Math.max(hoekPunt1.getY(), hoekPunt2.getY()), hoekPunt3.getY());
+		int breedte = x - Math.max(Math.max(hoekPunt1.getX(), hoekPunt2.getX()), hoekPunt3.getX());
+		Punt linkerBovenHoek = new Punt(x, y);
+		Omhullende o = new Omhullende(linkerBovenHoek, breedte, hoogte);
+		return o;
+	}
 }

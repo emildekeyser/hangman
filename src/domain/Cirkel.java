@@ -30,6 +30,7 @@ public class Cirkel extends Vorm {
 	public Punt getMiddelPunt() {
 		return punt;
 	}
+	
 
 	@Override
 	public boolean equals(Object obj) {
@@ -51,6 +52,16 @@ public class Cirkel extends Vorm {
 	@Override
 	public String toString() {
 		return "Cirkel: middelPunt: " + this.punt.toString() + " - straal: " + this.radius;
+	}
+
+	@Override
+	public Omhullende getOmhullende() {
+		int x = this.punt.getX() - this.radius;
+		int y = this.punt.getY() - this.radius;
+		Punt linkerBoven = new Punt(x,y);
+		int zijde = this.radius * 2;
+		Omhullende o = new Omhullende(linkerBoven, zijde, zijde);
+		return o;
 	}
 
 }

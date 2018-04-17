@@ -29,7 +29,7 @@ public class PictionaryUi {
 
 	public void vormMaken() {
 
-		Object[] shapes = { "Cirkel", "Rechthoek", "Lijnstuk" };
+		Object[] shapes = { "Cirkel", "Rechthoek", "Lijnstuk", "Driehoek" };
 		Object keuze = JOptionPane.showInputDialog(null, "Wat wilt u tekenen", "input", JOptionPane.INFORMATION_MESSAGE,
 				null, shapes, null);
 		JOptionPane.showMessageDialog(null, keuze);
@@ -81,6 +81,28 @@ public class PictionaryUi {
  
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "Fout begin en/of eindpunt");
+			}
+		}
+		else if (keuze.equals("Driehoek")) {
+			
+			try {
+				
+				int x1 = Integer.parseInt(JOptionPane.showInputDialog("x coordinaat van het eerste punt van de driehoek:"));
+				int y1 = Integer.parseInt(JOptionPane.showInputDialog("y coordinaat van het eerste punt van de driehoek:"));
+				Punt punt1 = new Punt(x1, y1);
+				int x2 = Integer.parseInt(JOptionPane.showInputDialog("x coordinaat van het tweede punt van de driehoek:"));
+				int y2 = Integer.parseInt(JOptionPane.showInputDialog("y coordinaat van het tweede punt van de driehoek:"));
+				Punt punt2 = new Punt(x2, y2);
+				int x3 = Integer.parseInt(JOptionPane.showInputDialog("x coordinaat van het derde punt van de driehoek:"));
+				int y3 = Integer.parseInt(JOptionPane.showInputDialog("y coordinaat van het derde punt van de driehoek:"));
+				Punt punt3 = new Punt(x3, y3);
+				Driehoek driehoek = new Driehoek(punt1, punt2, punt3);
+				JOptionPane.showMessageDialog(null, driehoek);
+ 
+			} catch (Exception e) {
+				
+				JOptionPane.showMessageDialog(null, "Fout punt in de driehoek");
+				
 			}
 		}
 	}
