@@ -8,7 +8,7 @@ public class Omhullende {
 	
 	
 	public Omhullende(Punt linkerBovenhoek, int breedte, int hoogte) {
-		super();
+		
 			setBreedte(breedte);
 			setHoogte(hoogte);
 			setLinkerBovenhoek(linkerBovenhoek);
