@@ -1,6 +1,8 @@
 package domain;
 
-public class Cirkel extends Vorm {
+import java.awt.Graphics;
+
+public class Cirkel extends Vorm implements Tekenbaar{
 	private int radius;
 	private Punt punt;
 
@@ -62,6 +64,12 @@ public class Cirkel extends Vorm {
 		int zijde = this.radius * 2;
 		Omhullende o = new Omhullende(linkerBoven, zijde, zijde);
 		return o;
+	}
+
+	@Override
+	public void teken(Graphics graphics) {
+		 
+		graphics.drawOval(this.getMiddelPunt().getX(), this.getMiddelPunt().getY(), this.getRadius() * 2, this.getRadius() * 2);
 	}
 
 }

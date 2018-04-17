@@ -1,6 +1,8 @@
 package domain;
 
-public class Rechthoek extends Vorm {
+import java.awt.Graphics;
+
+public class Rechthoek extends Vorm implements Tekenbaar{
 	
 	private int breedte;
 	private int hoogte;
@@ -85,12 +87,13 @@ public class Rechthoek extends Vorm {
 		return "Rechthoek : positie : ("+ linkerBovenhoek.getX() + ", " +  linkerBovenhoek.getY()+ " )" + "- breedte : " + breedte + " - hoogte : " + hoogte;
 		
 	}
-	
-	
-	
-	
-	
-	
-	
 
+
+	@Override
+	public void teken(Graphics graphics) {
+		
+		graphics.drawRect(this.getLinkerBovenhoek().getX(), this.getLinkerBovenhoek().getY(), this.getBreedte(),
+				this.getHoogte());
+	}
+	
 }
