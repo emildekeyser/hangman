@@ -27,7 +27,7 @@ public class PictionaryUi {
 			"input", JOptionPane.INFORMATION_MESSAGE, null, shapes, null);
 			JOptionPane.showMessageDialog(null,keuze);
 			
-			if( keuze == "Cirkel") {
+			if( keuze.equals("Cirkel")) {
 				try {
 					
 					int radius = Integer.parseInt(JOptionPane.showInputDialog("wat is de radius van de cirkel"));
@@ -43,7 +43,7 @@ public class PictionaryUi {
 					
 				
 			}
-			else if(keuze == "Rechthoek") {
+			else if(keuze.equals("Rechthoek")) {
 				
 			try {
 				int breedte = Integer.parseInt(JOptionPane.showInputDialog("wat is de breedte van de rechthoek"));
