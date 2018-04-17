@@ -8,7 +8,7 @@ public class Omhullende {
 	
 	
 	public Omhullende(Punt linkerBovenhoek, int breedte, int hoogte) {
-		super();
+		
 			setBreedte(breedte);
 			setHoogte(hoogte);
 			setLinkerBovenhoek(linkerBovenhoek);
@@ -61,12 +61,12 @@ public class Omhullende {
 	
 	
 	
-	public int minimaleX() {
+	public int minX() {
 		return getLinkerBovenhoek().getX();
 	}
 	
 	
-	public int maximaleX() {
+	public int maxX() {
 		return  getLinkerBovenhoek().getX() + this.breedte;
 	}
 	
