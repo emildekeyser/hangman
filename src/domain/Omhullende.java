@@ -61,12 +61,12 @@ public class Omhullende {
 	
 	
 	
-	public int minimaleX() {
+	public int minX() {
 		return getLinkerBovenhoek().getX();
 	}
 	
 	
-	public int maximaleX() {
+	public int maxX() {
 		return  getLinkerBovenhoek().getX() + this.breedte;
 	}
 	
