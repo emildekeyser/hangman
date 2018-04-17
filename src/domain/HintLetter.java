@@ -16,7 +16,7 @@ public class HintLetter {
 	
 	
 	public boolean raad(char letter) {
-		if(letter == getLetter()) {
+		if(letter == this.letter) {
 			return true;
 		}
 		return false;
@@ -31,7 +31,11 @@ public class HintLetter {
 
 
 	public char toChar() {
-		return letter;
+		if(raad(letter) == true) {
+			return letter;
+		}
+		return '_';
+		
 	}
 	
 	
