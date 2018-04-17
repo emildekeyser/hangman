@@ -34,6 +34,13 @@ public class WoordenLijstTest {
 		woordenlijstMetGeldigeWoorden.voegToe(geldigeWoorden.get(2));
 		
 	}
+	//zelf gemaakte test
+	@Test
+	public void RandomWoord_moet_null_returnen_wanneer_lijst_leeg_is() {
+		
+		assertEquals(null, woordenlijstLeeg.getRandomWord());
+		
+	}
 
 	@Test
 	public void WoordenLijst_moet_een_Woordenlijst_maken_zonder_woorden() {
