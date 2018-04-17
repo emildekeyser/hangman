@@ -16,6 +16,8 @@ public class TekeningTest {
 	private Vorm raambalk1;
 	private Vorm raambalk2;
 	private Vorm schouwNietInTekening;
+	private Vorm schouwBuitenVensterMetTeGroteBreedte;
+	private Vorm schouwBuitenVensterMetTeGroteHoogte;
 	
 	@Before
 	public void setUp() {
@@ -27,8 +29,22 @@ public class TekeningTest {
 		raambalk1 = new LijnStuk(new Punt(210, 250), new Punt(290, 250));
 		raambalk2 = new LijnStuk(new Punt(250, 220), new Punt(250, 280));
 		schouwNietInTekening = new Rechthoek(new Punt(150, 150), 20,40);
+		schouwBuitenVensterMetTeGroteBreedte = new Rechthoek(new Punt(380, 380), 20, 1);
+		schouwBuitenVensterMetTeGroteHoogte = new Rechthoek(new Punt(380, 380), 1, 20);
 	}
 
+	@Test (expected = DomainException.class)
+	public void Tekening_gooit_exception_wanneer_Vorm_met_te_grote_breedte_buiten_venster_valt() {
+		Tekening huis = new Tekening("ourhouse");
+		huis.voegToe(schouwBuitenVensterMetTeGroteBreedte);
+	}
+	
+	@Test (expected = DomainException.class)
+	public void Tekening_gooit_exception_wanneer_Vorm_met_te_grote_hoogte_buiten_venster_valt() {
+		Tekening huis = new Tekening("inthemiddleofthestreet");
+		huis.voegToe(schouwBuitenVensterMetTeGroteHoogte);
+	}
+	
 	@Test
 	public void Tekening_moet_een_tekening_aanmaken_met_een_geldige_naam_en_0_vormen() {
 		Tekening huis = new Tekening("huis");
