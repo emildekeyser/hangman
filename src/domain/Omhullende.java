@@ -100,18 +100,9 @@ public class Omhullende {
 		return true;
 	}
 
-
-
 	@Override
 	public String toString() {
 		return "Omhullende : (" + this.linkerBovenhoek.toString() + ") - "+ this.breedte + " - " + this.hoogte;
 	}
 	
-	
-	
-	
-	
-	
-	
-
 }
