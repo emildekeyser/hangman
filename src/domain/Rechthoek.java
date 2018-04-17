@@ -1,6 +1,6 @@
 package domain;
 
-public class Rechthoek  {
+public class Rechthoek extends Vorm {
 	
 	private int breedte;
 	private int hoogte;
@@ -8,6 +8,8 @@ public class Rechthoek  {
 
 	
 	public Rechthoek(Punt linkerBovenhoek,int breedte, int hoogte) {
+		
+		super();
 		setBreedte(breedte);
 		setHoogte(hoogte);
 		setLinkerBovenhoek(linkerBovenhoek);

@@ -1,21 +1,25 @@
 package domain;
 
-public class Cirkel {
+public class Cirkel extends Vorm {
 	private int radius;
 	private Punt punt;
-	
+
 	public Cirkel(Punt punt, int radius) {
+
+		super();
 		setRadius(radius);
 		setMiddelpunt(punt);
 	}
 
 	public void setMiddelpunt(Punt punt) {
-		if(punt == null)throw new DomainException();
+		if (punt == null)
+			throw new DomainException();
 		this.punt = punt;
 	}
 
 	private void setRadius(int radius) {
-		if(radius <= 0) throw new DomainException();
+		if (radius <= 0)
+			throw new DomainException();
 		this.radius = radius;
 	}
 
@@ -26,7 +30,6 @@ public class Cirkel {
 	public Punt getMiddelPunt() {
 		return punt;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -39,7 +42,7 @@ public class Cirkel {
 		Cirkel other = (Cirkel) obj;
 		if (radius != other.radius)
 			return false;
-		if(!this.punt.equals( ((Cirkel) obj).getMiddelPunt())) {
+		if (!this.punt.equals(((Cirkel) obj).getMiddelPunt())) {
 			return false;
 		}
 		return true;
@@ -49,7 +52,5 @@ public class Cirkel {
 	public String toString() {
 		return "Cirkel: middelPunt: " + this.punt.toString() + " - straal: " + this.radius;
 	}
-	
-	
-	
+
 }
