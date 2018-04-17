@@ -138,5 +138,27 @@ public class TekeningTest {
 		huisMetSchouwZonderDeur.voegToe(schouwNietInTekening);
 		return huisMetSchouwZonderDeur;
 	}
-
+	
+	public void verwijderen() {
+		
+		Tekening gebouwTekening = new Tekening("gebouw");
+		gebouwTekening.voegToe(gebouw);
+		gebouwTekening.verwijder(gebouw);
+		assertFalse(gebouwTekening.bevat(gebouw));
+	}
+	
+	public void toevoegen() {
+		
+		Tekening gebouwTekening = new Tekening("gebouw");
+		gebouwTekening.voegToe(gebouw);
+		assertTrue(gebouwTekening.bevat(gebouw));
+	}
+	
+	public void vinden() {
+		
+		Tekening gebouwTekening = new Tekening("gebouw");
+		gebouwTekening.voegToe(gebouw);
+		Vorm g = gebouwTekening.getVorm(0);
+		assertEquals(gebouw, g);
+	}
 }
