@@ -24,7 +24,7 @@ public class CirkelTest {
 	public void Maak_geldige_cirkel() {
 		
 		try {
-			Cirkel geldig = new Cirkel(geldigMiddelPunt, geldigeRadius);
+			new Cirkel(geldigMiddelPunt, geldigeRadius);
 		} catch (Exception e) {
 			fail();
 		}
@@ -34,17 +34,17 @@ public class CirkelTest {
 	
 	@Test (expected = DomainException.class)
 	public void CirkelMetMiddelPuntNullGooitException() {
-		Cirkel ci = new Cirkel(null, geldigeRadius);
+		new Cirkel(null, geldigeRadius);
 	}
 	
 	@Test (expected = DomainException.class)
 	public void CirkelMetStraalZeroGooitException() {
-		Cirkel ci = new Cirkel(geldigMiddelPunt, 0);
+		new Cirkel(geldigMiddelPunt, 0);
 	}
 	
 	@Test (expected = DomainException.class)
 	public void CirkelMetStraalNegatiefGooitException() {
-		Cirkel ci = new Cirkel(geldigMiddelPunt, -123652);
+		new Cirkel(geldigMiddelPunt, -123652);
 	}
 	
 	@Test
