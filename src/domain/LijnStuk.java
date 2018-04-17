@@ -57,4 +57,11 @@ public class LijnStuk extends Vorm {
 		return true;
 	}
 
+	@Override
+	public Omhullende getOmhullende() {
+		
+		int breedte = this.startPunt.getX() - this.eindPunt.getX();
+		int hoogte = this.startPunt.getY() - this.eindPunt.getY();
+	}
+
 }
