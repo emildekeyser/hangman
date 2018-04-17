@@ -59,9 +59,11 @@ public class LijnStuk extends Vorm {
 
 	@Override
 	public Omhullende getOmhullende() {
-		
+		Punt linkerBovenPunt = new Punt(this.startPunt.getX(), this.startPunt.getY());
 		int breedte = this.startPunt.getX() - this.eindPunt.getX();
 		int hoogte = this.startPunt.getY() - this.eindPunt.getY();
+		Omhullende o = new Omhullende(linkerBovenPunt, breedte, hoogte);
+		return o;
 	}
 
 }
