@@ -42,7 +42,7 @@ public class SpelerTest {
 	@Test
 	public void equals_moet_true_teruggeven_als_naam_en_score_gelijk_zijn(){
 		speler.addToScore(positiveScore);
-		Speler andereSpeler = new Speler(naam);
+		Speler andereSpeler = new Speler(new String("Lars"));
 		andereSpeler.addToScore(positiveScore);
 		
 		assertTrue(speler.equals(andereSpeler));

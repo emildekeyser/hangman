@@ -1,9 +1,5 @@
 package ui;
-import java.util.*;
-
 import javax.swing.JOptionPane;
-import javax.swing.JOptionPane.*;
-
 import domain.*;
 
 
