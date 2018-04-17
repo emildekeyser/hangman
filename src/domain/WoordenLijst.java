@@ -2,8 +2,6 @@ package domain;
 import java.util.ArrayList;
 import java.util.Random;
 
-import db.DbException;
-
 public class WoordenLijst {
 	
 	ArrayList<String> woordenLijst;
@@ -40,15 +38,14 @@ public class WoordenLijst {
 	
 	public String getRandomWord() {
 		
-		Random rand = new Random();
-		int randomint = rand.nextInt(woordenLijst.size() - 1);
-		
-		if (woordenLijst == null) {
+		if (woordenLijst.isEmpty()) {
 			
 			return null;
 			
 		} else {
 			
+			Random rand = new Random();
+			int randomint = rand.nextInt(woordenLijst.size() - 1);
 			return woordenLijst.get(randomint);
 
 		}	
