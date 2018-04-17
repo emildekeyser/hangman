@@ -10,8 +10,24 @@ public class PictionaryUi {
 
 		this.speler = speler;
 	}
+	
+	public void hoofdMenu() {
+		String[] keuzes = { "Vorm maken", "Tekening tonen", "Stoppen" };
+		Object keuze = JOptionPane.showInputDialog(null, "Wat wilt u doen", "input", JOptionPane.INFORMATION_MESSAGE,
+				null, keuzes, null);
+		if (keuze.equals(keuzes[0])) { //Vorm maken
+			vormMaken();
+		}else if (keuze.equals(keuzes[1])) { // Tekening tonen
+			tekeningTonen();
+		}
+	}
+	
+	private void tekeningTonen() {
+		// TODO Auto-generated method stub
+		
+	}
 
-	public void showMenu() {
+	public void vormMaken() {
 
 		Object[] shapes = { "Cirkel", "Rechthoek", "Lijnstuk" };
 		Object keuze = JOptionPane.showInputDialog(null, "Wat wilt u tekenen", "input", JOptionPane.INFORMATION_MESSAGE,
