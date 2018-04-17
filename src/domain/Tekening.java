@@ -15,7 +15,7 @@ public class Tekening {
 
 		super();
 		if (naam == null || naam.isEmpty()) {
-			throw new DomainException();
+			throw new IllegalArgumentException();
 		}
 		this.naam = naam;
 		this.vormen = new ArrayList<Vorm>();
@@ -44,21 +44,18 @@ public class Tekening {
 	}
 
 	public void verwijder(Vorm vorm) {
-		
+
 		this.vormen.remove(vorm);
 	}
-	
-	public boolean bevat(Vorm vorm)
-	{
+
+	public boolean bevat(Vorm vorm) {
 		for (Vorm v : this.vormen) {
-			if(v.equals(vorm)) {
+			if (v.equals(vorm)) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
-	
 
 	@Override
 	public String toString() {
@@ -78,13 +75,14 @@ public class Tekening {
 		if (getClass() != obj.getClass())
 			return false;
 		Tekening other = (Tekening) obj;
-		if (!naam.equals(other.naam))
+		if (this.getAantalVormen() != other.getAantalVormen())
 			return false;
-		if (!vormen.equals(other.vormen))
-			return false;
+		for (Vorm vorm : this.vormen) {
+			if (!other.bevat(vorm)) {
+				return false;
+			}
+		}
 		return true;
 	}
-	
-	
 
 }
