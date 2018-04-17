@@ -75,55 +75,18 @@ public class CirkelTest {
 		assertNotEquals(geldig1, geldig2);
 	}
 	
-	/*
-	@Test (expected = DomainException.class)
-	public void Speler_moet_exception_gooien_als_naam_lege_string() {
-		speler = new Speler("");
-	}
-	
 	@Test
-	public void equals_moet_true_teruggeven_als_naam_en_score_gelijk_zijn(){
-		speler.addToScore(positiveScore);
-		Speler andereSpeler = new Speler(naam);
-		andereSpeler.addToScore(positiveScore);
+	public void Omhullende_geeft_correcte_waarde() {
+		Cirkel geldig1 = new Cirkel(geldigMiddelPunt, geldigeRadius);
 		
-		assertTrue(speler.equals(andereSpeler));
-	}
+		int x = this.geldigMiddelPunt.getX() - this.geldigeRadius;
+		int y = this.geldigMiddelPunt.getY() - this.geldigeRadius;
+		Punt linkerBoven = new Punt(x,y);
+		int zijde = this.geldigeRadius * 2;
+		
 	
-	@Test
-	public void equals_moet_false_teruggeven_als_parameter_null(){
-		assertFalse(speler.equals(null));
+		assertEquals(linkerBoven, geldig1.getOmhullende().getLinkerBovenhoek());
+		assertEquals(zijde,geldig1.getRadius()*2);
+
 	}
-	
-	@Test
-	public void equals_moet_false_teruggeven_als_speler_een_andere_naam_heeft(){
-		Speler andereSpeler = new Speler(anderenaam);
-		assertFalse(speler.equals(andereSpeler));
-	}
-	
-	@Test
-	public void equals_moet_false_teruggeven_als_speler_aan_andere_score_heeft(){
-		Speler andereSpeler = new Speler(naam);
-		andereSpeler.addToScore(positiveScore);
-		assertFalse(speler.equals(andereSpeler));
-	}
-	
-	@Test
-	public void addToScore_moet_gegeven_score_toevoegen_aan_bestaande_score(){
-		speler.addToScore(positiveScore);
-		assertEquals(positiveScore, speler.getScore());
-	}
-	
-	@Test
-	public void addtoScore_mag_negatieve_score_toevoegen_als_de_resulterende_score_niet_negatief_wordt(){
-		speler.addToScore(positiveScore);
-		speler.addToScore(positiveScore);
-		speler.addToScore(negativeScore);
-		assertEquals(positiveScore, speler.getScore());
-	}
-	
-	@Test (expected = DomainException.class)
-	public void addToScore_moet_exception_gooien_als_resulterende_score_negatief_wordt(){
-		speler.addToScore(negativeScore);
-	}*/
 }

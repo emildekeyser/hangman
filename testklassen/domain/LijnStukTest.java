@@ -47,5 +47,19 @@ public class LijnStukTest {
 		LijnStuk lijnStuk = new LijnStuk(punt1, punt2);
 		assertFalse(lijnStuk.equals(null));
 	}
+	
+	@Test
+	public void Omhullende_geeft_correcte_waarde() {
+		LijnStuk lijnStuk = new LijnStuk(punt1, punt2);
+		
+		Punt linkerBovenPunt = new Punt(punt1.getX(), punt1.getY());
+		int breedte = punt2.getX() - punt1.getX();
+		int hoogte = punt2.getY() - punt1.getY();
+		
+		assertEquals(linkerBovenPunt, lijnStuk.getOmhullende().getLinkerBovenhoek());
+		assertEquals(breedte, lijnStuk.getOmhullende().getBreedte());
+		assertEquals(hoogte, lijnStuk.getOmhullende().getHoogte());
+		
+	}
 }
 	
