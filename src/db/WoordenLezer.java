@@ -41,7 +41,7 @@ public class WoordenLezer {
 	public WoordenLijst lees() {
 		WoordenLijst woordenLijst = new WoordenLijst();
 		while (scanner.hasNext()) {
-		    woordenLijst.voegToe((scanner.next()));
+		    woordenLijst.voegToe((scanner.nextLine()));
 		}
 		scanner.close();
 		return woordenLijst;
