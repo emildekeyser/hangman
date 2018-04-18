@@ -5,8 +5,10 @@ public class HintWoord {
 	private String hint;
 	
 	public HintWoord(String woord) {
+		//Het te raden woord (woord) mag niet leeg zijn en wordt omgezet naar kleine letters
 		if(woord == null || woord.trim().isEmpty())throw new DomainException("Woord mag niet leeg zijn.");
 		this.woord = woord.toLowerCase();
+		//een lege hint wordt aangemaakt. "_" wordt op de plaats van een letter gezet. bv: "test" wordt "_ _ _ _".
 		String result = "";
 		for(int i = 0; i < this.woord.length(); i++) {
 			result += " _";
@@ -29,9 +31,11 @@ public class HintWoord {
 				}
 			}
 		}
+		// return true wanneer de letter in het woord zit en veranderd is. return false als de letter niet in het woord zit.
 		return veranderd;
 	}
 	
+	// als alle letters geraden zijn geeft deze functie true terug
 	public boolean isGeraden() {
 		if(hint.replaceAll("\\s+","").equals(woord)) {
 			System.out.println(hint.trim());
