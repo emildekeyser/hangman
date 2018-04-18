@@ -1,4 +1,4 @@
-package domain;
+ package domain;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -27,7 +27,7 @@ public class WoordenLijst {
 		} 
 		else if (woordenLijst.contains(woord)) {
 				
-			throw new DomainException("Er mogen geen worden dubbel voorkomen.");
+			throw new DomainException("Er mogen geen woorden dubbel voorkomen.");
 				
 		} else {
 				
