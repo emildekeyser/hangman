@@ -69,7 +69,7 @@ public class Cirkel extends Vorm implements Tekenbaar{
 	@Override
 	public void teken(Graphics graphics) {
 		 
-		graphics.drawOval(this.getMiddelPunt().getX(), this.getMiddelPunt().getY(), this.getRadius() * 2, this.getRadius() * 2);
+		graphics.drawOval(this.getMiddelPunt().getX()-this.getRadius(), this.getMiddelPunt().getY()-this.getRadius(), this.getRadius() * 2, this.getRadius() * 2);
 	}
 
 }

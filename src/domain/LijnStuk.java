@@ -66,7 +66,7 @@ public class LijnStuk extends Vorm  implements Tekenbaar{
 	@Override
 	public Omhullende getOmhullende() {
 		Punt linkerBovenPunt = new Punt(this.startPunt.getX(), this.startPunt.getY());
-		int breedte = this.eindPunt.getX() - this.startPunt.getX();
+		int breedte = Math.abs(this.eindPunt.getX() - this.startPunt.getX());
 		int hoogte = Math.abs(this.eindPunt.getY() - this.startPunt.getY());
 		Omhullende o = new Omhullende(linkerBovenPunt, breedte, hoogte);
 		return o;
