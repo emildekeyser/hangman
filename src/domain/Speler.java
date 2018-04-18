@@ -1,7 +1,5 @@
 package domain;
 
-//hellooow
-// hey man
 public class Speler {
 	String naam;
 	int score;
@@ -14,7 +12,7 @@ public class Speler {
 	public void setNaam(String naam) {
 		
 		if (naam == null || naam.trim().equals("")) {
-			throw new DomainException();
+			throw new DomainException("Naam mag niet leeg of null zijn.");
 		}
 		this.naam = naam;
 	}
@@ -27,7 +25,7 @@ public class Speler {
 	
 	public void addToScore(int score) {
 		if ((this.getScore()+score)<0) {
-			throw new DomainException();
+			throw new DomainException("Score mag niet negatief zijn.");
 		}
 		setScore(this.getScore()+score);
 	}

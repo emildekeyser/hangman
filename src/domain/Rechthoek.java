@@ -32,7 +32,7 @@ public class Rechthoek extends Vorm implements Tekenbaar{
 
 	public void setLinkerBovenhoek(Punt linkerBovenhoek) {
 		if(linkerBovenhoek == null) {
-			throw new DomainException();
+			throw new DomainException("Linkerbovenhoek mag niet null zijn");
 		}
 		this.linkerBovenhoek = linkerBovenhoek;
 	}
@@ -43,7 +43,7 @@ public class Rechthoek extends Vorm implements Tekenbaar{
 	
 	public void setBreedte(int breedte) {
 		if(breedte <= 0  ) {
-			throw new DomainException();
+			throw new DomainException("Breedte moet meer dan 0 zijn.");
 		}
 		this.breedte = breedte;
 	}
@@ -54,7 +54,7 @@ public class Rechthoek extends Vorm implements Tekenbaar{
 	
 	public void setHoogte(int hoogte) {
 		if(hoogte <= 0 ) {
-			throw new DomainException();
+			throw new DomainException("Hoogte moet meer dan 0 zijn.");
 		}
 		this.hoogte = hoogte;
 	}

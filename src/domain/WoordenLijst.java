@@ -22,12 +22,12 @@ public class WoordenLijst {
 		
 		if (woord == null || woord.trim().isEmpty()) {
 			
-			throw new DomainException();
+			throw new DomainException("Er mag geen leeg woord toegevoegd worden.");
 			
 		} 
 		else if (woordenLijst.contains(woord)) {
 				
-			throw new DomainException();
+			throw new DomainException("Er mogen geen worden dubbel voorkomen.");
 				
 		} else {
 				
