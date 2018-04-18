@@ -9,14 +9,11 @@ public class HintLetter {
 		this.letter = letter;
 	}
 
-	
-	
 	public char getLetter() {
 			return letter;
 	
 	}
-	
-	
+
 	public boolean raad(char letter) {
 		if(geraden == true) {
 			return false;
