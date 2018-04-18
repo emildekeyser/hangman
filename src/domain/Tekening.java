@@ -32,14 +32,14 @@ public class Tekening {
 	public void voegToe(Vorm vorm) {
 
 		if (vorm == null) {
-			throw new DomainException();
+			throw new DomainException("Vorm mag niet null zijn.");
 		}
 		
 		Omhullende omhullendeVanVorm = vorm.getOmhullende();
 		if(omhullendeVanVorm.getLinkerBovenhoek().getX() < MIN_X || omhullendeVanVorm.getLinkerBovenhoek().getX() + omhullendeVanVorm.getBreedte() > MAX_X
 		   || omhullendeVanVorm.getLinkerBovenhoek().getY() < MIN_Y || omhullendeVanVorm.getLinkerBovenhoek().getY() + omhullendeVanVorm.getHoogte() > MAX_Y) {
 			
-			throw new DomainException();
+			throw new DomainException("Vorm mag niet buiten het beeld komen");
 			
 		} else {
 			

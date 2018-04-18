@@ -1,14 +1,12 @@
 package domain;
 
-import java.util.ArrayList;
-
 public class HintWoord {
 	private String woord;
 	private String hint;
 	//private ArrayList<HintLetter> hintLetters = new ArrayList<>();
 	
 	public HintWoord(String woord) {
-		if(woord == null)throw new DomainException();
+		if(woord == null)throw new DomainException("Woord mag niet null zijn.");
 		this.woord = woord;
 	}
 	

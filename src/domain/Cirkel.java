@@ -15,13 +15,13 @@ public class Cirkel extends Vorm implements Tekenbaar{
 
 	public void setMiddelpunt(Punt punt) {
 		if (punt == null)
-			throw new DomainException();
+			throw new DomainException("Middelpunt mag niet null zijn");
 		this.punt = punt;
 	}
 
 	private void setRadius(int radius) {
 		if (radius <= 0)
-			throw new DomainException();
+			throw new DomainException("Radius moet groter als 0 zijn");
 		this.radius = radius;
 	}
 

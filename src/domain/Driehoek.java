@@ -17,19 +17,19 @@ public class Driehoek extends Vorm implements Tekenbaar {
 
 		if(hoekPunt1 == null || hoekPunt2 == null || hoekPunt3 == null) {
 			
-			throw new DomainException();
+			throw new DomainException("Hoekpunten mogen niet null zijn");
 			
 		}
 		
 		if(hoekPunt1.equals(hoekPunt2) || hoekPunt1.equals(hoekPunt3) || hoekPunt2.equals(hoekPunt3)) {
 			
-			throw new DomainException();
+			throw new DomainException("Hoekpunten mogen niet gelijk zijn");
 			
 		}
 		
 		if((hoekPunt2.getX() - hoekPunt1.getX()) * (hoekPunt3.getY() - hoekPunt1.getY()) == (hoekPunt3.getX() - hoekPunt1.getX()) * (hoekPunt2.getY() - hoekPunt1.getY())) {
 			
-			throw new DomainException();
+			throw new DomainException("Hoekpunten mogen niet op dezelfde lijn liggen");
 			
 		} else {
 			
