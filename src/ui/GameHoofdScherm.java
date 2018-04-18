@@ -14,6 +14,7 @@ public class GameHoofdScherm extends JFrame{
 	private static final long serialVersionUID = 1L;
 	
 	private TekenVenster tekenvenster;
+	
 
 	public GameHoofdScherm(String titel, Tekening tekening){
 		super(titel);

@@ -5,14 +5,14 @@ import domain.WoordenLijst;
 
 public class HangManUi {
 	Speler speler;
-	WoordenLijst woordenLijst;
+	//WoordenLijst woordenLijst;
 	
 	
 
 
-	public HangManUi(Speler speler, WoordenLijst woordenLijst) {
+	public HangManUi(Speler speler/*, WoordenLijst woordenLijst*/) {
 		setSpeler(speler);
-		setWoordenLijst(woordenLijst);
+		//setWoordenLijst(woordenLijst);
 	}
 	
 	
@@ -21,7 +21,7 @@ public class HangManUi {
 		GameHoofdScherm view = new GameHoofdScherm(tekening.getNaam(), tekening);
 		view.setVisible(true);
 		view.teken();
-		String randomWord = this.getWoordenLijst().getRandomWord();
+		//String randomWord = this.getWoordenLijst().getRandomWord();
 	}
 	
 	public Speler getSpeler() {
@@ -34,13 +34,13 @@ public class HangManUi {
 	}
 
 
-	public WoordenLijst getWoordenLijst() {
+	/*public WoordenLijst getWoordenLijst() {
 		return woordenLijst;
 	}
 
 
-	public void setWoordenLijst(WoordenLijst woordenLijst) {
+ 	public void setWoordenLijst(WoordenLijst woordenLijst) {
 		this.woordenLijst = woordenLijst;
-	}
+	}*/
 
 }
