@@ -3,7 +3,7 @@ package ui;
 import domain.*;
 
 public class TekeningHangMan extends Tekening {
-
+	
 	public TekeningHangMan() {
 		
 		super("Hangman");
