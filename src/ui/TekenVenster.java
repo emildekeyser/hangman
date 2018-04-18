@@ -36,7 +36,8 @@ public class TekenVenster extends Canvas {
 	public void paint(Graphics graphics) {
 		Graphics2D graphics2D = (Graphics2D) graphics;
 		graphics2D.setStroke(new BasicStroke(5));
-
+		
+		
 		for (int i = 0; i < this.tekening.getAantalVormen(); i++) {
 			if (this.tekening.getVorm(i).isZichtbaar()) {
 				try {
@@ -47,6 +48,5 @@ public class TekenVenster extends Canvas {
 				}
 			}
 		}
-
 	}
 }
