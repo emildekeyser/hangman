@@ -38,12 +38,10 @@ public class HintWoord {
 	// als alle letters geraden zijn geeft deze functie true terug
 	public boolean isGeraden() {
 		if(hint.replaceAll("\\s+","").equals(woord)) {
-			System.out.println(hint.trim());
 			return true;
 		}
 		
 		else {
-			System.out.println(hint.trim());
 			return false;
 		}
 	}
