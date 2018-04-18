@@ -3,7 +3,7 @@ package domain;
 public abstract class Vorm {
 	
 	private Omhullende o;
-	private boolean zichtbaar = false;
+	private boolean zichtbaar = true;
 	
 	public abstract Omhullende getOmhullende();
 
