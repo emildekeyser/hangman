@@ -10,6 +10,7 @@ public class HangManUi {
 	Speler speler;
 	WoordenLijst woordenLijst;
 	HintWoord rade = new HintWoord("Dante");
+	
 
 	public HangManUi(Speler speler/* , WoordenLijst woordenLijst */) {
 		setSpeler(speler);
@@ -22,7 +23,15 @@ public class HangManUi {
 		view.setVisible(true);
 		view.teken();
 		//String randomWord = this.getWoordenLijst().getRandomWord();
-		JOptionPane.showMessageDialog(null, "Rarara welk woord zoeken we? \n\n"+ rade.toString()+   );
+		while(!rade.isGeraden()) {
+		String s = JOptionPane.showInputDialog(null, "Rarara welk woord zoeken we? \n\n"+ rade.toString()+ "\n Geef een letter.");
+		char c = s.charAt(0);
+		if(!rade.raad(c)) {
+			tekening.zetVolgendeZichtbaar();
+		}
+		
+		
+		}
 	}
 
 	public Speler getSpeler() {
