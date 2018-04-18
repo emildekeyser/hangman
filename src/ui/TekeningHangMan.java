@@ -1,11 +1,5 @@
 package ui;
 
-import java.awt.BasicStroke;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-
-import javax.swing.JOptionPane;
-
 import domain.*;
 
 public class TekeningHangMan extends Tekening {
@@ -22,7 +16,7 @@ public class TekeningHangMan extends Tekening {
 		hoofd.setZichtbaar(false);
 		Vorm oogLinks = new Cirkel(new Punt(270, 118), 2);// zichtbaar na 2 fouten
 		oogLinks.setZichtbaar(false);
-		Vorm oogRechts = new Cirkel(new Punt(290, 118), 2);//…
+		Vorm oogRechts = new Cirkel(new Punt(290, 118), 2);
 		oogRechts.setZichtbaar(false);
 		Vorm neus = new Cirkel(new Punt(280, 128), 2);
 		neus.setZichtbaar(false);
@@ -72,9 +66,9 @@ public class TekeningHangMan extends Tekening {
 	
 	
 	public int getAantalOnzichtbaar() {
-		int aantal =0;
+		int aantal = 0;
 		for (int i = 0; i < this.getAantalVormen(); i++) {
-			if(this.getVorm(i).isZichtbaar()) {
+			if(!this.getVorm(i).isZichtbaar()) {
 				aantal++;
 			}
 			
@@ -83,14 +77,17 @@ public class TekeningHangMan extends Tekening {
 	}
 	
 	public void zetVolgendeZichtbaar() {
+		
+		if (this.getAantalOnzichtbaar() == 0) {
+			throw new UiException("alles getoond");
+		}
+		
 		int index = 0;
 		while(this.getVorm(index).isZichtbaar()) {
 			index++;
 		}
-		if(this.getAantalVormen() > index+1) {
+		if(this.getAantalVormen() > index) {
 			this.getVorm(index).setZichtbaar(true);
-		}else {
-			throw new UiException("alles getoond");
 		}
 		
 	}

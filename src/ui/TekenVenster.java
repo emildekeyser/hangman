@@ -22,7 +22,7 @@ public class TekenVenster extends Canvas {
 		setTekening(tekening);
 	}
 
-	private void setTekening(Tekening tekening) {
+	public void setTekening(Tekening tekening) {
 		if (tekening == null)
 			throw new UiException("Tekening mag niet null zijn");
 		this.tekening = tekening;
@@ -36,7 +36,6 @@ public class TekenVenster extends Canvas {
 	public void paint(Graphics graphics) {
 		Graphics2D graphics2D = (Graphics2D) graphics;
 		graphics2D.setStroke(new BasicStroke(5));
-		
 		
 		for (int i = 0; i < this.tekening.getAantalVormen(); i++) {
 			if (this.tekening.getVorm(i).isZichtbaar()) {

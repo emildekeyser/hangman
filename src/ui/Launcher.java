@@ -17,7 +17,7 @@ public class Launcher {
 		Object keuze = JOptionPane.showInputDialog(null, "Dag" + speler.getNaam() + " welk spel wil je spelen?",
 				"input", JOptionPane.INFORMATION_MESSAGE, null, keuzes, null);
 		if (keuze.equals(keuzes[0])) { // Hangman
-			HangManUi hmui = new HangManUi(speler);
+			HangManUi hmui = new HangManUi(speler, woordenLijst);
 			hmui.play();
 
 		} else if (keuze.equals(keuzes[1])) { // Pictonary

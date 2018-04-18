@@ -3,14 +3,17 @@ package domain;
 import ui.TekeningHangMan;
 
 public class HangMan {
-	Speler speler;
-	WoordenLijst woordenLijst;
-	HintWoord hintWoord;
+	private Speler speler;
+	private WoordenLijst woordenLijst;
+	private HintWoord hintWoord;
+	private TekeningHangMan tekening;
 	
 	
-	public HangMan(Speler speler,WoordenLijst woordenLijst) {
+	public HangMan(Speler speler, WoordenLijst woordenLijst) {
 		setSpeler(speler);
 		setWoordenLijst(woordenLijst);
+		this.hintWoord = new HintWoord(this.woordenLijst.getRandomWord());
+		this.tekening = new TekeningHangMan();
 	}
 	public void setSpeler(Speler speler) {
 		if (speler == null) {
@@ -29,7 +32,7 @@ public class HangMan {
 	}
 	
 	public String getHint(){
-		return new HintWoord(woordenLijst.getRandomWord()).toString();
+		return this.hintWoord.toString();
 	}
 	
 	public Speler getSpeler() {
@@ -37,11 +40,13 @@ public class HangMan {
 	}
 	
 	public TekeningHangMan getTekening() {
-		return new TekeningHangMan();
+		return this.tekening;
 	}
 	
 	public void raad(char letter) {
-		this.hintWoord.raad(letter);
+		if (!this.hintWoord.raad(letter)) {
+			this.getTekening().zetVolgendeZichtbaar();
+		}
 		
 	}
 	

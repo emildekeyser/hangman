@@ -45,7 +45,7 @@ public class WoordenLijst {
 		} else {
 			
 			Random rand = new Random();
-			int randomint = rand.nextInt(woordenLijst.size() - 1);
+			int randomint = rand.nextInt(woordenLijst.size());
 			return woordenLijst.get(randomint);
 
 		}	
