@@ -47,24 +47,24 @@ public class TekeningHangMan extends Tekening {
 		Vorm handRechts = new Cirkel(new Punt(330, 170), 5);
 		handRechts.setZichtbaar(false);
 		
-		this.voegToe(galgBodem);
-		this.voegToe(galgStaaf);
-		this.voegToe(hangbar);
-		this.voegToe(koord);
-		this.voegToe(hoofd);
-		this.voegToe(oogLinks);
-		this.voegToe(oogRechts);
-		this.voegToe(neus);
-		this.voegToe(mond);
-		this.voegToe(lijf);
-		this.voegToe(beenLinks);
-		this.voegToe(beenRechts);
-		this.voegToe(voetLinks);
-		this.voegToe(voetRechts);
-		this.voegToe(armLinks);
-		this.voegToe(armRechts);
-		this.voegToe(handLinks);
-		this.voegToe(handRechts);
+		super.voegToe(galgBodem);
+		super.voegToe(galgStaaf);
+		super.voegToe(hangbar);
+		super.voegToe(koord);
+		super.voegToe(hoofd);
+		super.voegToe(oogLinks);
+		super.voegToe(oogRechts);
+		super.voegToe(neus);
+		super.voegToe(mond);
+		super.voegToe(lijf);
+		super.voegToe(beenLinks);
+		super.voegToe(beenRechts);
+		super.voegToe(voetLinks);
+		super.voegToe(voetRechts);
+		super.voegToe(armLinks);
+		super.voegToe(armRechts);
+		super.voegToe(handLinks);
+		super.voegToe(handRechts);
 	
 		
 		
@@ -89,6 +89,8 @@ public class TekeningHangMan extends Tekening {
 		}
 		if(this.getAantalVormen() > index+1) {
 			this.getVorm(index).setZichtbaar(true);
+		}else {
+			throw new UiException("alles getoond");
 		}
 		
 	}
@@ -101,6 +103,15 @@ public class TekeningHangMan extends Tekening {
 		}
 	}
 
+	@Override
+	public void voegToe(Vorm vorm) {
+		throw new UiException("kan niet toevoegen");
+	}
+	
+	@Override
+	public void verwijder(Vorm vorm) {
+		throw new UiException("kan niet verwijderen");
+	}
 	
 /*
 	public void teken(Graphics graphic) {
