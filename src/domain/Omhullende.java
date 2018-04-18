@@ -14,13 +14,9 @@ public class Omhullende{
 			setLinkerBovenhoek(linkerBovenhoek);
 	}
 
-
-
 	public Punt getLinkerBovenhoek() {
 		return linkerBovenhoek;
 	}
-
-
 
 	public void setLinkerBovenhoek(Punt linkerBovenhoek) {
 		if(linkerBovenhoek == null) {
