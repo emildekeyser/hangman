@@ -43,6 +43,7 @@ public class Tekening {
 			
 		} else {
 			
+			
 			this.vormen.add(vorm);
 			
 		}
@@ -94,5 +95,7 @@ public class Tekening {
 		}
 		return true;
 	}
+	
+	
 
 }
