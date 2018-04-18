@@ -10,7 +10,7 @@ public class HangManUi {
 	Speler speler;
 	WoordenLijst woordenLijst;
 	HintWoord rade = new HintWoord("Dante");
-	
+	TekeningHangMan tekening = new TekeningHangMan();
 
 	public HangManUi(Speler speler/* , WoordenLijst woordenLijst */) {
 		setSpeler(speler);
@@ -18,7 +18,7 @@ public class HangManUi {
 	}
 
 	public void play() {
-		TekeningHangMan tekening = new TekeningHangMan();
+		
 		GameHoofdScherm view = new GameHoofdScherm(tekening.getNaam(), tekening);
 		view.setVisible(true);
 		view.teken();
