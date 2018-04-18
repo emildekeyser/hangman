@@ -15,8 +15,12 @@ public class LijnStuk extends Vorm  implements Tekenbaar{
 
 	public void setPunten(Punt startPunt, Punt eindPunt) {
 
-		if (startPunt == null || eindPunt == null || startPunt.equals(eindPunt)) {
-			throw new DomainException();
+		if (startPunt == null || eindPunt == null) {
+			throw new DomainException("Punten mogen niet null zijn.");
+		}
+		
+		if (startPunt.equals(eindPunt)) {
+			throw new DomainException("Punten mogen niet gelijk zijn.");
 		}
 		
 		this.startPunt = startPunt;

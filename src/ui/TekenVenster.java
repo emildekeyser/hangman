@@ -7,6 +7,8 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
+import javax.swing.JOptionPane;
+
 import domain.Tekenbaar;
 import domain.Tekening;
 
@@ -36,8 +38,14 @@ public class TekenVenster extends Canvas {
 		graphics2D.setStroke(new BasicStroke(5));
 
 		for (int i = 0; i < this.tekening.getAantalVormen(); i++) {
-			Tekenbaar tek = (Tekenbaar) this.tekening.getVorm(i);
-			tek.teken(graphics);
+			if (this.tekening.getVorm(i).isZichtbaar()) {
+				try {
+					Tekenbaar tek = (Tekenbaar) this.tekening.getVorm(i);
+					tek.teken(graphics);
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, e.getMessage());
+				}
+			}
 		}
 
 	}

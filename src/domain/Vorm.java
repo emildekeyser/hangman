@@ -1,8 +1,10 @@
 package domain;
 
 public abstract class Vorm {
+	
 	private Omhullende o;
-
+	private boolean zichtbaar = true;
+	
 	public abstract Omhullende getOmhullende();
 
 	@Override
@@ -26,6 +28,13 @@ public abstract class Vorm {
 	public String toString() {
 		return "Vorm [o=" + o + "]";
 	}
-	
+
+	public boolean isZichtbaar() {
+		return zichtbaar;
+	}
+
+	public void setZichtbaar(boolean zichtbaar) {
+		this.zichtbaar = zichtbaar;
+	}
 	
 }

@@ -1,25 +1,33 @@
 package domain;
 
-import java.util.ArrayList;
-
 public class HintWoord {
 	private String woord;
+	private String hint;
 	//private ArrayList<HintLetter> hintLetters = new ArrayList<>();
 	
 	public HintWoord(String woord) {
+		if(woord == null)throw new DomainException("Woord mag niet null zijn.");
 		this.woord = woord;
 	}
 	
 	public boolean raad(char letter) {
-		woord.indexOf(letter);
+		int index = woord.indexOf(letter);
+		if(index >=0) {
 		String result = "";
+		
 		for(int i = 0; i < this.woord.length(); i++) {
-			if(i == woord.indexOf(letter)) {
-				
+			if(index == i) {
+				result += " " + letter;
 			}
+			else {
 			result += " _";
+			}
 		}
+		this.hint = result.substring(1);
+		System.out.println(hint);
 		return true;
+		}
+		return false;
 	}
 	
 	public boolean isGeraden() {
@@ -32,7 +40,8 @@ public class HintWoord {
 		for(int i = 0; i < this.woord.length(); i++) {
 			result += " _";
 		}
-		return result.substring(1);
+		this.hint = result.substring(1);
+		return this.hint;
 	}
 
 	public String getWoord() {
