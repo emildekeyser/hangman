@@ -35,7 +35,7 @@ public class HangManUi {
 	public void play() {
 		
 		HangMan hangman = new HangMan(speler, woordenLijst);
-		HangManPaneel paneel = new HangManPaneel(hangman);
+		HangmanPaneel paneel = new HangmanPaneel(hangman);
 		HangManHoofdScherm hoofdscherm = new HangManHoofdScherm(hangman, paneel);
 		hoofdscherm.start();
 	}
