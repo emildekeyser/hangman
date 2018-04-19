@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class WoordenLijst {
 	
-	ArrayList<String> woordenLijst;
+	public ArrayList<String> woordenLijst;
 	
 	public WoordenLijst() {
 		
