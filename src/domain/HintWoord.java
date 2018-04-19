@@ -22,7 +22,7 @@ public class HintWoord {
 		boolean veranderd = false;
 		// check of letter al eens geraden is
 		int inwoord = hint.indexOf(letter);
-		if(inwoord < 0) {
+		if(inwoord < 0 || letter == ' ') {
 			for(int i = 0; i < woord.length(); i++) {
 				//substring in hint omzetten naar letter
 				if(woord.charAt(i) == letter) {
@@ -37,7 +37,7 @@ public class HintWoord {
 	
 	// als alle letters geraden zijn geeft deze functie true terug
 	public boolean isGeraden() {
-		if(hint.replaceAll("\\s+","").equals(woord)) {
+		if(hint.replaceAll("\\s+","").equals(woord.replaceAll("\\s+", ""))) {
 			return true;
 		}
 		
