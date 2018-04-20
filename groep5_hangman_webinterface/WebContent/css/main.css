@@ -1,0 +1,109 @@
+@font-face{
+    font-family: london;
+    src: url(../font/OldLondon.ttf);
+}
+@font-face{
+    font-family: noodle;
+    src: url(../font/big_noodle_titling.ttf);
+}
+@font-face{
+    font-family: news;
+    src: url(../font/OldNewspaperTypes.ttf);
+}
+html{
+    background-color: black;
+    background-image: url(../img/hangman.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+p {
+    font-family: news;
+    font-size: 16px;
+    color: white;
+    text-shadow: 0px 0px 50px black;
+}
+h2 {
+    font-family: noodle;
+    color: #131313;
+    text-align: center;
+    text-shadow: 0px 0px 50px black;
+}
+h1{
+    font-family: london;
+    font-size: 60px;
+    color: #131313;
+    text-align: center;
+    margin: auto;
+    text-shadow: 0px 0px 60px #8E8E8E;
+    
+}
+a, a:visited {
+    text-decoration: none;
+    color: #8E8E8E;
+    font-family: london;
+}
+ul{
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    max-width: 1100px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+li{
+    font-size: 40px;
+}
+li a:hover{
+    text-shadow: 0px 0px 50px black;
+}
+footer p{
+    font-family: noodle;
+    color: #545454;
+    text-align: center;
+}
+p{
+    text-align: center;
+    color: lightgray;
+}
+footer{
+    margin-top: 40px;
+}
+table{
+    margin: auto;
+}
+td{
+    font-family: news;
+    color: lightgray;;
+}
+th{
+    font-family: noodle;
+    font-size: 30px;
+    color: #131313;
+}
+th, td{
+    text-align: center;
+    padding: 10px;
+    border-bottom: 0.1px solid #8E8E8E;
+}
+tr:hover{
+    background-color: dimgray;
+}
+main>a{
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    font-family: london;
+    margin-top: 10px;
+    
+}
+main>a:hover{
+    color: darkgray;
+    
+}
+input.submitknop{
+    display: block;
+    margin: auto;
+}
