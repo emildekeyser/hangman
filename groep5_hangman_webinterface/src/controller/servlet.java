@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import db.DBPath;
 import db.WoordSchrijver;
 import db.WoordenLezer;
 
@@ -29,7 +30,7 @@ public class servlet extends HttpServlet {
 	@SuppressWarnings("unchecked")
 	public servlet() {
 		super();
-		this.lezer = new WoordenLezer("../groep5_hangman_app/hangman.txt");
+		this.lezer = new WoordenLezer(DBPath.getPath());
 		this.woordenLijst = (ArrayList<String>) this.lezer.lees().woordenLijst.clone();
 	}
 
@@ -90,7 +91,7 @@ public class servlet extends HttpServlet {
 		
 		String nieWoord = request.getParameter("niewwoord");
 		
-		new WoordSchrijver().schrijf(nieWoord);
+		new WoordSchrijver(DBPath.getPath()).schrijf(nieWoord);
 	}
 
 }
